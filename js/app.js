@@ -1,10 +1,10 @@
 addToCart = () => {
     const productName = getFieldValue('product-name');
-    const productPrice = getFieldValue('product-price');
     const productQuantity = getFieldValue('product-quantity');
+    const productPrice = getFieldValue('product-price');
     let productObj = {};
-    productObj.price = productPrice;
     productObj.quantity = productQuantity;
+    productObj.price = productPrice * productQuantity;
     if (productName && productPrice && productQuantity) {
         addToLs(productName, productObj);
         setDisplay();
